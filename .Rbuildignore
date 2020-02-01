@@ -4,5 +4,6 @@
 ^README.Rmd$
 ^README.html$
 
+^.appveyor.yml$
 ^_pkgdown.yml$
 ^.travis.yml$
