@@ -1,0 +1,8 @@
+.*.swp
+
+^Rakefile$
+^README.Rmd$
+^README.html$
+
+^_pkgdown.yml$
+^.travis.yml$

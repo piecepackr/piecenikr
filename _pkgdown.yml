@@ -1,0 +1,4 @@
+destination: "/home/trevorld/a/projects/websites/R/piecenikr/"
+url: "https://trevorldavis.com/R/piecenikr"
+development:
+    mode: auto
