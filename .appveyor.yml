@@ -22,7 +22,8 @@ environment:
     - R_VERSION: release
 
 build_script:
-  - travis-tool.sh install_github trevorld/ppgames
+  - travis-tool.sh install_github piecepackr/piecepackr
+  - travis-tool.sh install_github piecepackr/ppgames
   - travis-tool.sh install_github r-lib/covr
   - travis-tool.sh install_deps
 

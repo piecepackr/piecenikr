@@ -23,5 +23,6 @@ addons:
             - libmagick++-dev
 r_github_packages:
   - jimhester/lintr
+  - piecepackr/piecepackr
   - piecepackr/ppgames
   - r-lib/covr
