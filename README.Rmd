@@ -20,7 +20,7 @@ License
 * Under American law I likely cannot claim any copyright on any of the Looney Pyramids graphical **output** produced by this package.
 * Looney Pyramids are trademarked and patented by [Looney Labs](https://www.looneylabs.com/).  They do not permit commercial use of Looney Pyramids without permission.  They seem cool with
 
-  1. Creating [new Looney Pyramids games](https://www.icehousegames.org/wiki/index.php?title=Community_Games).  [But don't try to independly publish such a game while including Looney Pyramids in your product](https://faq.looneylabs.com/non-gameplay-questions/working-with-looney-labs#1770, nor [creating commercial electronic versions of Looney Pyramids games](https://www.looneylabs.com/looney-labs-electronic-arcade)).
+  1. Creating [new Looney Pyramids games](https://www.icehousegames.org/wiki/index.php?title=Community_Games).  [But don't try to independly publish such a game while including Looney Pyramids in your product](https://faq.looneylabs.com/non-gameplay-questions/working-with-looney-labs#1770), nor [creating commercial electronic versions of Looney Pyramids games](https://www.looneylabs.com/looney-labs-electronic-arcade)).
   2. [Making Icehouse pieces](https://www.icehousegames.org/wiki/index.php?title=Making_pieces) for personal use (note they definitely [would mind if someone commercially manufactured icehouse pieces without permission](http://wunderland.com/WTS/Andy/Games/PatentsAndLawsuits.html))
   3. (Non-commercial) fan art and game playing aids
 
