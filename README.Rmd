@@ -27,7 +27,7 @@ License
 Examples
 --------
 
-This package contains a ``looney_pyramids`` configuration.  [piecepackr](https://github.com/piecepackr/piecepackr) has 2D graphic support for drawing pyramids with it.
+This package contains a ``looney_pyramids`` configuration.  One can draw 2D graphics using ``grid.piece``.
 
 ```r
 library("piecepackr")
@@ -44,15 +44,14 @@ dfp <- tibble(piece_side="pyramid_top", x=2+c(1,2,2,1,1,2,2,2), y=2+c(2,2,1,1,1,
 df2 <- rbind(dft, dfp)
 df <- rbind(df1, df2)
 
-pmap_piece(df, cfg=looney_pyramids, default.units="in")
+pmap_piece(df, grid.piece, cfg=looney_pyramids, default.units="in")
 ```
 
 ![Example 2D diagram](https://trevorldavis.com/share/piecepack/2d_looney_pyramids.png)
 
-There is an experimental package [piecepackr3d](https://github.com/piecepackr/piecepackr3d) providing basic 3D graphic support for drawing pyramids with R's rgl package.
+One can use ``piece3d`` to draw 3D graphics using the ``rgl`` package:
 
 ```r
-library("piecepackr3d")
 library("rgl")
 dft <- tibble(piece_side = "tile_back", x=rep(c(-2, 0, 2), 3), y=rep(c(-2, 0, 2), each=3))
 dfp1 <- tibble(piece_side = "pyramid_top", x=0, y=0, rank = 3, suit = 2)
