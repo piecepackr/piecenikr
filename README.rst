@@ -60,6 +60,18 @@ License
       permission <http://wunderland.com/WTS/Andy/Games/PatentsAndLawsuits.html>`__)
    3. (Non-commercial) fan art and game playing aids
 
+Installation
+------------
+
+Within R_ do:
+
+.. code:: r
+
+    install.packages("remotes")
+    remotes::install_github("piecepackr/piecepackr")
+    remotes::install_github("piecepackr/ppgames") # suggested
+    remotes::install_github("piecepackr/piecenikr")
+
 Examples
 --------
 

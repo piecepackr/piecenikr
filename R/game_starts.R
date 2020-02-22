@@ -30,7 +30,7 @@ df_martian_chess <- function(n_players = 2, seed = NULL) {
                        x = 2.5, y = c(2.5, 6.5), cfg = "checkers2")
         df_pawn <- tibble(piece_side = "pyramid_top", cfg = "icehouse_pieces",
                           rank = 1, suit = sample.int(6),
-                          x = rep(2:3, each=3), y = c(2:3, 6, 3, 6:7))
+                          x = rep(2:3, each = 3), y = c(2:3, 6, 3, 6:7))
         df_drone <- tibble(piece_side = "pyramid_top", cfg = "icehouse_pieces",
                           rank = 2, suit = sample.int(6),
                           x = c(1:3, 2:4), y = c(6:8, 1:3))
@@ -39,7 +39,7 @@ df_martian_chess <- function(n_players = 2, seed = NULL) {
                           x = c(1, 1, 2, 3, 4, 4), y = c(7, 8, 8, 1, 1, 2))
     } else if (n_players == 4) {
         df_board <- tibble(piece_side = "board_face", suit = 6, rank = 4,
-                       x = rep(c(2.5, 6.5), 2), y = rep(c(2.5, 6.5), each=2), cfg = "checkers2")
+                       x = rep(c(2.5, 6.5), 2), y = rep(c(2.5, 6.5), each = 2), cfg = "checkers2")
         df_pawn <- tibble(piece_side = "pyramid_top", cfg = "icehouse_pieces",
                           rank = 1, suit = sample(rep(1:6, 2)),
                           x = c(rep(c(2, 7), each = 2), rep(c(3, 6), each = 4)),
