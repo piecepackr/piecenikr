@@ -1,7 +1,8 @@
 .*.swp
 
 ^Rakefile$
-^README.Rmd$
+^README.rst$
+^README.Rrst$
 ^README.html$
 
 ^.appveyor.yml$

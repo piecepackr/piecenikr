@@ -1,9 +1,11 @@
 library("piecepackr")
+library("ppgames")
 library("tibble")
 library("vdiffr")
 context("looney_pyramids")
 test_that("Looney Pyramids works as expected", {
     # icehouse pyramids
+    cfg <- looney_pyramids()$icehouse_pieces
     dft <- tibble(piece_side = "tile_back", x = 1.5, y = 1.5, suit = NA, rank = NA, angle = NA)
     dfp <- tibble(piece_side = c("pyramid_face", "pyramid_left", "pyramid_right", "pyramid_back"),
                   x = c(1, 2, 2, 1), y = c(2, 2, 1, 1), suit = 1:4, rank = c(1:3, 3), angle = seq(90, 360, 90))
@@ -17,6 +19,10 @@ test_that("Looney Pyramids works as expected", {
     df <- rbind(df1, df2)
 
     expect_doppelganger("looney_pyramids",
-        function() pmap_piece(df, cfg = looney_pyramids, default.units = "in")
+        function() pmap_piece(df, cfg = cfg, default.units = "in")
     )
+})
+test_that("game starts", {
+    verify_output("../text_diagrams/martian_chess_2.txt", cat_piece(df_martian_chess(n_players = 2)))
+    verify_output("../text_diagrams/martian_chess_4.txt", cat_piece(df_martian_chess(n_players = 4)))
 })
