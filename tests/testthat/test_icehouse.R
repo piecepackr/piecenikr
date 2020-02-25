@@ -1,5 +1,4 @@
 library("piecepackr")
-library("ppgames")
 library("tibble")
 library("vdiffr")
 context("looney_pyramids")
@@ -21,8 +20,4 @@ test_that("Looney Pyramids works as expected", {
     expect_doppelganger("looney_pyramids",
         function() pmap_piece(df, cfg = cfg, default.units = "in")
     )
-})
-test_that("game starts", {
-    verify_output("../text_diagrams/martian_chess_2.txt", cat_piece(df_martian_chess(n_players = 2)))
-    verify_output("../text_diagrams/martian_chess_4.txt", cat_piece(df_martian_chess(n_players = 4)))
 })
