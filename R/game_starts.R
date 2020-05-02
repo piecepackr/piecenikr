@@ -18,7 +18,9 @@ NULL
 #' @importFrom rlang .data
 
 scale_xy <- function(df, factor) {
-    mutate(df, x = factor * .data$x, y = factor * .data$y)
+    df <- mutate(df, x = factor * .data$x, y = factor * .data$y)
+    attr(df, "scale_factor") <- factor
+    df
 }
 
 #' @rdname df_lp_games
