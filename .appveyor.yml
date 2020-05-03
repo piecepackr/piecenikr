@@ -28,10 +28,6 @@ build_script:
   - travis-tool.sh install_deps
 
 test_script:
-  - cinst ghostscript
-  - cmd: set "GSPATH=C:\\Program Files\\gs\\gs9.50\\bin\\"
-  - cmd: set "PATH=%GSPATH%;%PATH%"
-  - cmd: gswin64c --version
   - travis-tool.sh run_tests
 
 on_failure:
