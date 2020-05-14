@@ -17,6 +17,7 @@ test_that("Looney Pyramids works as expected", {
     df2 <- rbind(dft, dfp)
     df <- rbind(df1, df2)
 
+    skip_on_ci()
     expect_doppelganger("looney_pyramids",
         function() pmap_piece(df, cfg = cfg, default.units = "in")
     )
