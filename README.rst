@@ -52,7 +52,7 @@ License
       Looney Pyramids in your
       product <https://faq.looneylabs.com/non-gameplay-questions/working-with-looney-labs#1770>`__,
       nor `creating commercial electronic versions of Looney Pyramids
-      games <https://www.looneylabs.com/looney-labs-electronic-arcade>`__).
+      games <https://www.looneylabs.com/looney-labs-electronic-arcade>`__.
    2. `Making Icehouse
       pieces <https://www.icehousegames.org/wiki/index.php?title=Making_pieces>`__
       for personal use (note they definitely `would mind if someone
