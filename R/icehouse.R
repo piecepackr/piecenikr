@@ -1,5 +1,5 @@
 #' @importFrom piecepackr as_pp_cfg get_shape_grob_fn pp_cfg
-#' @importFrom grid circleGrob gpar gList gTree unit
+#' @importFrom grid circleGrob gpar gList gTree makeContent unit
 NULL
 
 #' Basic grob function for Looney Pyramids
@@ -15,11 +15,18 @@ NULL
 looneyPyramidGrob <- function(piece_side, suit, rank, cfg = pp_cfg()) { # nolint
     cfg <- as_pp_cfg(cfg)
     opt <- cfg$get_piece_opt(piece_side, suit, rank)
+    gTree(opt = opt, rank = rank, name = NULL, gp = gpar(), vp = NULL, cl = "looney_pyramid_face")
+}
 
-    shape_fn <- get_shape_grob_fn(opt$shape, opt$shape_t, opt$shape_r)
+#' @import grid
+#' @export
+makeContent.looney_pyramid_face <- function(x) { # nolint
+    opt <- x$opt
+    rank <- x$rank
+    shape <- piecepackr::pp_shape(opt$shape, opt$shape_t, opt$shape_r, opt$back)
 
     # Background
-    background_grob <- shape_fn(gp = gpar(col = NA, fill = opt$background_color))
+    background_grob <- shape$shape(gp = gpar(col = NA, fill = opt$background_color), name = "background")
 
     # Circles
     gp_c <- gpar(fill = opt$ps_color, col = opt$ps_color)
@@ -31,10 +38,12 @@ looneyPyramidGrob <- function(piece_side, suit, rank, cfg = pp_cfg()) { # nolint
     c_grob <- switch(rank, c1_grob, gList(c1_grob, c2_grob), gList(c1_grob, c2_grob, c3_grob))
 
     # Border
-    border_grob <- shape_fn(gp = gpar(col = opt$border_color, fill = NA, lex = opt$border_lex))
+    gp_border <- gpar(col = opt$border_color, fill = NA, lex = opt$border_lex)
+    border_grob <- shape$shape(gp = gp_border, name = "border")
+
     gl <- gList(background_grob, c_grob, border_grob)
 
-    gTree(children = gl, name = piece_side)
+    setChildren(x, gl)
 }
 
 # Pyramid Base 9/16", 25/32", 1"

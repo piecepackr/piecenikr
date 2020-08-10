@@ -6,6 +6,7 @@
 ^README.html$
 
 ^.appveyor.yml$
+^codecov.yml$
 ^.lintr$
 ^_pkgdown.yml$
 ^.travis.yml$
