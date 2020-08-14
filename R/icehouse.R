@@ -66,9 +66,10 @@ looney_pyramids <- function() {
                             height.r1.pyramid = 1.03879813366216633419, height.r2.pyramid = 1.429409979895551074947,
                             height.r3.pyramid = 1.820027472320129513506,
                             rank_text = ",\u25cf,\u25cf\u25cf,\u25cf\u25cf\u25cf",
-                            suit_color = "#D55E00,#808080,#009E73,#56B4E9,#E69F00,#808080",
-                            border_color.pyramid = "#D55E00,#808080,#009E73,#56B4E9,#E69F00,#808080",
-                            background_color.pyramid = "#D55E0080,#000000,#009E7380,#56B4E980,#E69F0080,#FFFFFF",
+                            # suit_color = "#D55E00,#808080,#009E73,#56B4E9,#E69F00,#808080",
+                            suit_color = "#B53E00,#808080,#007E53,#3694C9,#C67F00,#808080",
+                            border_color.pyramid = "#D55E00A0,#808080FF,#009E73A0,#56B4E9A0,#E69F00A0,#808080FF",
+                            background_color.pyramid = "#D55E0090,#000000,#009E7390,#56B4E890,#E69F0090,#FFFFFF",
                             border_lex.pyramid = 4, grob_fn.pyramid = looneyPyramidGrob
                             )
     list(icehouse_pieces = pp_cfg(icehouse_pieces))
