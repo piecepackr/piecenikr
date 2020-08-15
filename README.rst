@@ -22,6 +22,7 @@ piecenikr: Looney Pyramids graphics
 .. _R: https://www.r-project.org/
 
 
+
 Looney Pyramids aka Icehouse pieces is a game system invented by Andrew
 Looney. The following are good sites of information about Looney
 Pyramids:
@@ -78,47 +79,94 @@ Examples
 This package contains a ``looney_pyramids`` configuration. One can draw
 2D graphics using ``grid.piece``.
 
-.. code:: r
 
-   library("piecepackr")
-   library("piecenikr")
-   library("tibble")
-   cfg <- looney_pyramids()$icehouse_pieces
+.. sourcecode:: r
+    
 
-   dft <- tibble(piece_side="tile_back", x=1.5, y=1.5, suit=NA, rank=NA, angle=NA)
-   dfp <- tibble(piece_side=c("pyramid_face", "pyramid_left", "pyramid_right", "pyramid_back"),
-                 x=c(1,2,2,1), y=c(2,2,1,1), suit=1:4, rank=c(1:3,3), angle=seq(90, 360, 90))
-   df1 <- rbind(dft, dfp)
+    library("piecepackr")
+    library("piecenikr")
+    library("tibble")
+    cfg <- looney_pyramids()$icehouse_pieces
+    
+    dft <- tibble(piece_side="tile_back", x=1.5, y=1.5, suit=NA, rank=NA, angle=NA)
+    dfp <- tibble(piece_side=c("pyramid_face", "pyramid_left", "pyramid_right", "pyramid_back"),
+                 x=c(1,2,2,1), y=c(2,2,1,1), 
+                 suit=1:4, rank=c(1:3,3), angle=seq(90, 360, 90))
+    df1 <- rbind(dft, dfp)
+    
+    dft <- tibble(piece_side="tile_back", x=3.5, y=3.5, suit=NA, rank=NA, angle=NA)
+    dfp <- tibble(piece_side="pyramid_top",
+                  x=2+c(1,2,2,1,1,2,2,2),
+                  y=2+c(2,2,1,1,1,1,1,1),
+                 suit=c(1:6,2,3), 
+                 rank=c(1:3,3,1,2,1,1), 
+                 angle=seq(0, 630, 90))
+    df2 <- rbind(dft, dfp)
+    df <- rbind(df1, df2)
+    
+    pmap_piece(df, grid.piece, cfg = cfg, default.units = "in")
 
-   dft <- tibble(piece_side="tile_back", x=3.5, y=3.5, suit=NA, rank=NA, angle=NA)
-   dfp <- tibble(piece_side="pyramid_top", x=2+c(1,2,2,1,1,2,2,2), y=2+c(2,2,1,1,1,1,1,1),
-                 suit=c(1:6,2,3), rank=c(1:3,3,1,2,1,1), angle=seq(0, 630, 90))
-   df2 <- rbind(dft, dfp)
-   df <- rbind(df1, df2)
+.. figure:: man/figures/README-intro2D-1.png
+    :alt: Example 2D diagram
 
-   pmap_piece(df, grid.piece, cfg = cfg, default.units = "in")
-
-.. figure:: https://trevorldavis.com/share/piecepack/2d_looney_pyramids.png
-   :alt: Example 2D diagram
-
-   Example 2D diagram
+    Example 2D diagram
 
 One can use ``piece3d`` to draw 3D graphics using the ``rgl`` package:
 
-.. code:: r
 
-   library("rgl")
-   dft <- tibble(piece_side = "tile_back", x=rep(c(-2, 0, 2), 3), y=rep(c(-2, 0, 2), each=3))
-   dfp1 <- tibble(piece_side = "pyramid_top", x=0, y=0, rank = 3, suit = 2)
-   dfp2 <- tibble(piece_side = "pyramid_face", 
-               x = rep(c(-2, 0, 2), 3), y = rep(c(2, 0, -2), each=3),
+.. sourcecode:: r
+    
+
+    dfb <- tibble(piece_side = "board_face",
+                  x = 0, y = 0, suit = 6, rank = 3, cfg = "checkers2")
+    dfp1 <- tibble(piece_side = "pyramid_top", x=0, y=0, rank = 3, suit = 2,
+                   cfg = "icehouse_pieces")
+    dfp2 <- tibble(piece_side = "pyramid_face", 
+               x = rep(c(-2, 0, 2), 3),
+               y = rep(c(2, 0, -2), each=3),
                angle = c(45, 0, -45, 90, 0, -90, 135, 180, -135),
-               suit = rep(1:6, length.out=9), rank = rep(1:3, length.out=9))[-5, ]
-   df <- dplyr::bind_rows(dft, dfp1, dfp2)
+               suit = rep(1:6, length.out=9), 
+               rank = rep(1:3, length.out=9),
+               cfg = "icehouse_pieces")[-5, ]
+    df <- dplyr::bind_rows(dfb, dfp1, dfp2)
+    
+    library("rgl")
+    invisible(open3d())
+    view3d(phi=-30, zoom = 0.8)
+    if (Sys.which("wmctrl") != "") system("wmctrl -r RGL -e 0,-1,-1,600,600")
+    envir = c(looney_pyramids(), game_systems("sans3d"))
+    pmap_piece(df, piece3d, envir = envir, trans = op_transform, scale = 0.99)
+    Sys.sleep(2)
+    rgl.snapshot("man/figures/3d_looney_pyramids.png")
 
-   pmap_piece(df, piece3d, cfg = looney_pyramids, trans = op_transform, scale = 0.99)
 
-.. figure:: https://trevorldavis.com/share/piecepack/3d_looney_pyramids.png
+.. figure:: man/figures/3d_looney_pyramids.png
    :alt: Example 3D diagram
 
    Example 3D diagram
+
+There are also functions which perform board set ups for games that use Looney Pyramids:
+
+1. ``df_martian_chess()`` sets up `Martian Chess <https://www.looneylabs.com/rules/martian-chess>`_, an abstract by Andrew Looney.
+2. ``ppgames::df_alien_city()`` sets up `Alien City <http://www.ludism.org/ppwiki/AlienCity>`_, an abstract by Michael Schoessow.
+
+Here is an exmaple of using ``df_martian_chess()`` and the `PPN <https://trevorldavis.com/piecepackr/portable-piecepack-notation.html>`_ parser ``ppgames::read_ppn()`` in order to animate a game of Martian Chess.
+
+
+.. sourcecode:: r
+    
+
+    library("ppgames")
+    game <- read_ppn(system.file("ppn/martian-chess.ppn", package = "piecenikr"))[[1]]
+    envir <- c(looney_pyramids(), game_systems())
+    animate_game(game, file = "man/figures/martian-chess.gif",
+                 annotate = FALSE, envir = envir,
+                 n_transitions = 6L, n_pauses = 4L, fps = 8,
+                 trans = op_transform, op_scale = 0.25, op_angle = 90,
+                 pt_thickness = 0.3)
+
+
+.. figure:: man/figures/martian-chess.gif
+   :alt: Animation of a game of Martian Chess
+
+   Animation of a game of Martian Chess
