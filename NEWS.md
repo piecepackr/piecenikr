@@ -1,4 +1,4 @@
-piecenikr 0.1.2
+piecenikr 0.1.3
 ===============
 
 * The colors used in the ``icehouse_pieces`` configuration returned by ``looney_pyramids()``
