@@ -20,6 +20,7 @@ after_success:
 addons:
     apt:
        packages:
+            - libgit2-dev
             - libmagick++-dev
 r_github_packages:
   - jimhester/lintr
