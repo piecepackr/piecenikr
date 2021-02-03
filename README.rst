@@ -43,7 +43,7 @@ License
 - Under American law I likely cannot claim any copyright on any Looney Pyramid
   graphical **output** (e.g. game diagrams and animations) a user creates with this package.
   Furthermore, I relinquish any copyright claims to such graphical **output** in any jurisdiction 
-  (if any exist) that does grants me any such a rights.
+  (if any exist) that does grants me any such rights.
 
 - Looney Pyramids are trademarked and patented by `Looney
   Labs <https://www.looneylabs.com/>`__. They do not permit commercial
