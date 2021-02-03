@@ -39,29 +39,31 @@ easier to make Looney Pyramids graphics with piecepackr_.
 License
 -------
 
--  The **code** of this R package is `CC BY-SA
-   4.0 <https://creativecommons.org/licenses/by-sa/4.0/>`__.
+- The **code** of this R package is licensed under the `Creative Commons Attribution-ShareAlike 4.0 International license <https://creativecommons.org/licenses/by-sa/4.0/>`__.  
+  This license is compatible with version 3 of the GNU Public License (GPL-3).
 
--  Under American law I likely cannot claim any copyright on any of the
-   Looney Pyramids graphical **output** produced by this package.
+- Under American law I likely cannot claim any copyright on any Looney Pyramid
+  graphical **output** (e.g. game diagrams and animations) a user creates with this package.
+  Furthermore, I relinquish any copyright claims to such graphical **output** in any jurisdiction 
+  (if any exist) that does grants me any such a rights.
 
--  Looney Pyramids are trademarked and patented by `Looney
-   Labs <https://www.looneylabs.com/>`__. They do not permit commercial
-   use of Looney Pyramids without permission. They seem cool with
+- Looney Pyramids are trademarked and patented by `Looney
+  Labs <https://www.looneylabs.com/>`__. They do not permit commercial
+  use of Looney Pyramids without permission. They seem cool with
 
-   1. Creating `new Looney Pyramids
-      games <https://www.icehousegames.org/wiki/index.php?title=Community_Games>`__.
-      `But don’t try to independly publish such a game while including
-      Looney Pyramids in your
-      product <https://faq.looneylabs.com/non-gameplay-questions/working-with-looney-labs#1770>`__
-      nor `creating commercial electronic versions of Looney Pyramids
-      games <https://www.looneylabs.com/looney-labs-electronic-arcade>`__.
-   2. `Making Icehouse
-      pieces <https://www.icehousegames.org/wiki/index.php?title=Making_pieces>`__
-      for personal use (note they definitely `would mind if someone
-      commercially manufactured icehouse pieces without
-      permission <http://wunderland.com/WTS/Andy/Games/PatentsAndLawsuits.html>`__)
-   3. (Non-commercial) fan art and game playing aids
+  1. Creating `new Looney Pyramids
+     games <https://www.icehousegames.org/wiki/index.php?title=Community_Games>`__.
+     `But don’t try to independly publish such a game while including
+     Looney Pyramids in your
+     product <https://faq.looneylabs.com/non-gameplay-questions/working-with-looney-labs#1770>`__
+     nor `creating commercial electronic versions of Looney Pyramids
+     games <https://www.looneylabs.com/looney-labs-electronic-arcade>`__.
+  2. `Making Icehouse
+     pieces <https://www.icehousegames.org/wiki/index.php?title=Making_pieces>`__
+     for personal use (note they definitely `would mind if someone
+     commercially manufactured icehouse pieces without
+     permission <http://wunderland.com/WTS/Andy/Games/PatentsAndLawsuits.html>`__)
+  3. (Non-commercial) fan art and game playing aids
 
 Installation
 ------------
