@@ -26,6 +26,7 @@ scale_xy <- function(df, factor) {
 #' @rdname df_lp_games
 #' @export
 df_martian_chess <- function(n_players = 2, seed = NULL) {
+    if (!is.null(seed)) withr::local_seed(seed)
     set.seed(seed)
     if (n_players == 2) {
         df_board <- tibble(piece_side = "board_face", suit = 6, rank = 4,
