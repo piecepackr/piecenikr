@@ -1,13 +1,9 @@
 piecenikr: Looney Pyramids graphics
 ===================================
 
-.. image:: https://travis-ci.org/piecepackr/piecenikr.png?branch=master
-    :target: https://travis-ci.org/piecepackr/piecenikr
-    :alt: Build Status
-
-.. image:: https://ci.appveyor.com/api/projects/status/github/piecepackr/piecenikr?branch=master&svg=true 
-    :target: https://ci.appveyor.com/project/piecepackr/piecenikr
-    :alt: AppVeyor Build Status
+.. image:: https://github.com/piecepackr/piecenikr/workflows/R-CMD-check/badge.svg
+    :target: https://github.com/piecepackr/piecenikr/actions
+    :alt: R-CMD-check
 
 .. image:: https://img.shields.io/codecov/c/github/piecepackr/piecenikr/master.svg
     :target: https://codecov.io/github/piecepackr/piecenikr?branch=master

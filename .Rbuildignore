@@ -10,3 +10,4 @@
 ^.lintr$
 ^_pkgdown.yml$
 ^.travis.yml$
+^\.github$
