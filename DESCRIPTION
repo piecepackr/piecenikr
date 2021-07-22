@@ -21,4 +21,5 @@ Suggests:
     ppgames (>= 0.5.0-6),
     testthat,
     vdiffr
+Remotes: github::piecepackr/ppgames
 RoxygenNote: 7.1.1
