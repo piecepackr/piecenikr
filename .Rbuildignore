@@ -5,6 +5,8 @@
 ^README.Rrst$
 ^README.html$
 
+^looney$
+
 ^.appveyor.yml$
 ^codecov.yml$
 ^.lintr$

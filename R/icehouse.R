@@ -1,4 +1,4 @@
-#' @importFrom piecepackr as_pp_cfg get_shape_grob_fn pp_cfg
+#' @importFrom piecepackr as_pp_cfg pp_cfg
 #' @importFrom grid circleGrob gpar gList gTree makeContent unit
 NULL
 
