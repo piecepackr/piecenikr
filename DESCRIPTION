@@ -2,7 +2,7 @@ Encoding: UTF-8
 Package: piecenikr
 Type: Package
 Title: Looney Pyramid Graphics
-Version: 0.1.4-3
+Version: 0.1.4-4
 Author: Trevor L Davis. 
 Maintainer: Trevor L Davis <trevor.l.davis@gmail.com>
 Description: Functions and objects to make Looney Pyramids graphics.
@@ -21,4 +21,5 @@ Suggests:
     ppgames (>= 0.5.0-6),
     testthat,
     vdiffr
+Remotes: piecepackr/ppgames
 RoxygenNote: 7.1.2
