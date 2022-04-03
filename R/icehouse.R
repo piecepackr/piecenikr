@@ -11,14 +11,21 @@ NULL
 #' @param rank Rank of the piece
 #' @param cfg Piecepackr configuration object
 #'
+#' @import grid
 #' @export
 looneyPyramidGrob <- function(piece_side, suit, rank, cfg = pp_cfg()) { # nolint
     cfg <- as_pp_cfg(cfg)
     opt <- cfg$get_piece_opt(piece_side, suit, rank)
-    gTree(opt = opt, rank = rank, name = NULL, gp = gpar(), vp = NULL, cl = "looney_pyramid_face")
+    gTree(opt = opt, rank = rank, scale = 1, border = TRUE,
+          name = NULL, gp = gpar(), vp = NULL, cl = "looney_pyramid_face")
 }
 
-#' @import grid
+#' @export
+makeContext.looney_pyramid_face <- function(x) {
+    x <- update_gp(x, gp = gpar(cex = x$scale, lex = x$scale))
+    x
+}
+
 #' @export
 makeContent.looney_pyramid_face <- function(x) { # nolint
     opt <- x$opt
@@ -38,8 +45,12 @@ makeContent.looney_pyramid_face <- function(x) { # nolint
     c_grob <- switch(rank, c1_grob, gList(c1_grob, c2_grob), gList(c1_grob, c2_grob, c3_grob))
 
     # Border
-    gp_border <- gpar(col = opt$border_color, fill = NA, lex = opt$border_lex)
-    border_grob <- shape$shape(gp = gp_border, name = "border")
+    if (x$border) {
+        gp_border <- gpar(col = opt$border_color, fill = NA, lex = opt$border_lex)
+        border_grob <- shape$shape(gp = gp_border, name = "border")
+    } else {
+        border_grob <- nullGrob(name = "border")
+    }
 
     gl <- gList(background_grob, c_grob, border_grob)
 
