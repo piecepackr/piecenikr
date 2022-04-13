@@ -1,3 +1,5 @@
+op <- options(piecepackr.at.inform = FALSE)
+on.exit(options(op))
 library("piecepackr")
 library("tibble")
 library("vdiffr")

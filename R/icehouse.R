@@ -16,7 +16,8 @@ NULL
 looneyPyramidGrob <- function(piece_side, suit, rank, cfg = pp_cfg()) { # nolint
     cfg <- as_pp_cfg(cfg)
     opt <- cfg$get_piece_opt(piece_side, suit, rank)
-    gTree(opt = opt, rank = rank, scale = 1, border = TRUE,
+    gTree(opt = opt, rank = rank,
+          border = TRUE, flip = FALSE, scale = 1,
           name = NULL, gp = gpar(), vp = NULL, cl = "looney_pyramid_face")
 }
 
@@ -52,7 +53,10 @@ makeContent.looney_pyramid_face <- function(x) { # nolint
         border_grob <- nullGrob(name = "border")
     }
 
-    gl <- gList(background_grob, c_grob, border_grob)
+    if (x$flip)
+        gl <- gList(c_grob, background_grob, border_grob)
+    else
+        gl <- gList(background_grob, c_grob, border_grob)
 
     setChildren(x, gl)
 }
@@ -84,4 +88,24 @@ looney_pyramids <- function() {
                             border_lex.pyramid = 4, grob_fn.pyramid = looneyPyramidGrob
                             )
     list(icehouse_pieces = pp_cfg(icehouse_pieces))
+}
+
+# Internal function copied from `{piecepackr}`
+# unlike `grid::editGrob()` *updates* previous cex, lex, alpha values
+# by multiplying new values with previous values.
+#' @importFrom utils hasName
+update_gp <- function(grob, gp = gpar()) {
+    stopifnot(all(names(gp) %in% c("alpha", "cex", "lex")))
+    if(is.null(grob$gp)) {
+        grob$gp <- gp
+    } else {
+        for (name in c("alpha", "cex", "lex")) {
+            if(hasName(grob$gp, name) && hasName(gp, name)) {
+                grob$gp[[name]] <- grob$gp[[name]] * gp[[name]]
+            } else if (hasName(gp, name)) {
+                grob$gp[[name]] <- gp[[name]]
+            }
+        }
+    }
+    grob
 }

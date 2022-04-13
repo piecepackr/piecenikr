@@ -1,3 +1,10 @@
+piecenikr 0.1.4
+===============
+
+* Custom ``icehouse_pieces`` configuration returned by ``looney_pyramids()``
+  has been tweaked for improved rendering in piecepackr v1.11
+  when drawn in an oblique projection with its `{grid}` binding.
+
 piecenikr 0.1.3
 ===============
 
