@@ -2,9 +2,10 @@ Encoding: UTF-8
 Package: piecenikr
 Type: Package
 Title: Looney Pyramid Graphics
-Version: 0.1.4-6
-Author: Trevor L Davis. 
-Maintainer: Trevor L Davis <trevor.l.davis@gmail.com>
+Version: 0.1.4-7
+Authors@R: c(person("Trevor L", "Davis", role=c("aut", "cre"),
+             email="trevor.l.davis@gmail.com",
+             comment = c(ORCID = "0000-0001-6341-4639")))
 Description: Functions and objects to make Looney Pyramids graphics.
 License: CC BY-SA 4.0
 URL: https://github.com/piecepackr/piecenikr
