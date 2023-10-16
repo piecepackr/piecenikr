@@ -5,8 +5,8 @@ piecenikr: Looney Pyramids graphics
     :target: https://github.com/piecepackr/piecenikr/actions
     :alt: R-CMD-check
 
-.. image:: https://img.shields.io/codecov/c/github/piecepackr/piecenikr/master.svg
-    :target: https://codecov.io/github/piecepackr/piecenikr?branch=master
+.. image:: https://codecov.io/github/piecepackr/piecenikr/branch/master/graph/badge.svg
+    :target: https://app.codecov.io/github/piecepackr/piecenikr?branch=master
     :alt: Coverage Status
 
 .. image:: http://www.repostatus.org/badges/latest/wip.svg
@@ -27,7 +27,7 @@ Pyramids:
 -  https://www.icehousegames.org/wiki/index.php?title=Main_Page
    (unofficial wiki)
 
-This R package provides a ``looney_pyramids`` configuration that make it
+This R package provides a ``looney_pyramids()`` configuration that make it
 easier to make Looney Pyramids graphics with piecepackr_.
 
 License
@@ -74,8 +74,8 @@ Within R_ do:
 Examples
 --------
 
-This package contains a ``looney_pyramids`` configuration. One can draw
-2D graphics using ``grid.piece``.
+This package contains a ``looney_pyramids()`` configuration. One can draw
+2D graphics using ``grid.piece()``.
 
 
 .. sourcecode:: r
@@ -109,7 +109,7 @@ This package contains a ``looney_pyramids`` configuration. One can draw
 
     Example 2D diagram
 
-One can use ``piece3d`` to draw 3D graphics using the ``rgl`` package:
+One can use ``piece3d()`` to draw 3D graphics using the ``rgl`` package:
 
 
 .. sourcecode:: r
@@ -146,7 +146,7 @@ One can use ``piece3d`` to draw 3D graphics using the ``rgl`` package:
 There are also functions which perform board set ups for games that use Looney Pyramids:
 
 1. ``df_martian_chess()`` sets up `Martian Chess <https://www.looneylabs.com/rules/martian-chess>`_, an abstract by Andrew Looney.
-2. ``ppgames::df_alien_city()`` sets up `Alien City <http://www.ludism.org/ppwiki/AlienCity>`_, an abstract by Michael Schoessow.
+2. ``ppdf::piecepack_alien_city()`` sets up `Alien City <http://www.ludism.org/ppwiki/AlienCity>`_, an abstract by Michael Schoessow.
 
 Here is an exmaple of using ``df_martian_chess()`` and the `PPN <https://trevorldavis.com/piecepackr/portable-piecepack-notation.html>`_ parser ``ppgames::read_ppn()`` in order to animate a game of Martian Chess.
 

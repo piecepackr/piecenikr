@@ -1,10 +1,14 @@
 op <- options(piecepackr.at.inform = FALSE)
 on.exit(options(op))
-library("piecepackr")
-library("tibble")
-library("vdiffr")
-context("looney_pyramids")
 test_that("Looney Pyramids works as expected", {
+    skip_on_ci()
+    skip_on_cran()
+    skip_if_not_installed("vdiffr")
+
+    library("piecepackr")
+    library("tibble")
+    library("vdiffr")
+
     # icehouse pyramids
     cfg <- looney_pyramids()$icehouse_pieces
     dft <- tibble(piece_side = "tile_back", x = 1.5, y = 1.5, suit = NA, rank = NA, angle = NA)
@@ -19,7 +23,6 @@ test_that("Looney Pyramids works as expected", {
     df2 <- rbind(dft, dfp)
     df <- rbind(df1, df2)
 
-    skip_on_ci()
     expect_doppelganger("looney_pyramids",
         function() pmap_piece(df, cfg = cfg, default.units = "in")
     )

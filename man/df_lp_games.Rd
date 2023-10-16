@@ -17,8 +17,8 @@ df_martian_chess(n_players = 2, seed = NULL)
 }
 \details{
 Here is some more information about the various games:
- \describe{
- \item{Martian Chess}{An abstract by Andrew Looney.
-                     See \url{https://www.looneylabs.com/rules/martian-chess}.}
+\describe{
+\item{Martian Chess}{An abstract by Andrew Looney.
+See \url{https://www.looneylabs.com/rules/martian-chess}.}
 }
 }
