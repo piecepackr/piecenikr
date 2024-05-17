@@ -78,7 +78,7 @@ This package contains a ``looney_pyramids()`` configuration. One can draw
 2D graphics using ``grid.piece()``.
 
 
-.. sourcecode:: r
+.. code:: r
     
 
     library("piecepackr")
@@ -112,7 +112,7 @@ This package contains a ``looney_pyramids()`` configuration. One can draw
 One can use ``piece3d()`` to draw 3D graphics using the ``rgl`` package:
 
 
-.. sourcecode:: r
+.. code:: r
     
 
     dfb <- tibble(piece_side = "board_face",
@@ -151,7 +151,7 @@ There are also functions which perform board set ups for games that use Looney P
 Here is an exmaple of using ``df_martian_chess()`` and the `PPN <https://trevorldavis.com/piecepackr/portable-piecepack-notation.html>`_ parser ``ppgames::read_ppn()`` in order to animate a game of Martian Chess.
 
 
-.. sourcecode:: r
+.. code:: r
     
 
     library("ppgames")
