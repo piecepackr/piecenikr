@@ -26,7 +26,7 @@ Suggests:
     ppn,
     testthat,
     vdiffr
-Remotes: piecepackr/ppcli, piecepackr/ppdf, piecepackr/ppn
+Remotes: piecepackr/piecepackr, piecepackr/ppcli, piecepackr/ppdf, piecepackr/ppn
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.1
 Config/testthat/edition: 3
