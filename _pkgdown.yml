@@ -2,3 +2,5 @@ destination: "../../websites/R/piecenikr/"
 url: "https://trevorldavis.com/R/piecenikr"
 development:
     mode: auto
+template:
+  bootstrap: 5

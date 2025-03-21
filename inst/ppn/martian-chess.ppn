@@ -2,6 +2,7 @@
 GameType:
   Name: Martian Chess
   Seed: 42
+  System: Looney Pyramids
 ...
 1. d3-d4 1... b6-c5
 2. d4-c4 2... b7-b5

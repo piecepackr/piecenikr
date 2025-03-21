@@ -1,7 +1,7 @@
 # game starts
 
     Code
-      ppcli::cat_piece(df_martian_chess(seed = 42, n_players = 2))
+      ppcli::cat_piece(icehouse_martian_chess(seed = 42, n_players = 2))
     Output
         ┌───┰───┰───┰───┐
         │   ┃   ┃   ┃   │
@@ -42,7 +42,7 @@
 ---
 
     Code
-      ppcli::cat_piece(df_martian_chess(seed = 42, n_players = 4))
+      ppcli::cat_piece(icehouse_martian_chess(seed = 42, n_players = 4))
     Output
         ┌───┰───┰───┰───┬───┰───┰───┰───┐
         │   ┃   ┃   ┃   │   ┃   ┃   ┃   │

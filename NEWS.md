@@ -1,3 +1,23 @@
+piecenikr 0.2.0 (development)
+=============================
+
+Deprecated features
+-------------------
+
+* The function `df_martian_chess()` chess is deprecated in favor of `icehouse_martian_chess()`.
+
+New features
+------------
+
+* `looney_pyramids()` gains a `border` argument to enable/disable a black border,
+  the colors have been tweaked (e.g. a lighter "yellow" and a darker "blue"),
+  and now the `has_pyramids` binding returns `TRUE`.
+* New icehouse piece setup functions:
+
+  - `icehouse_martian_chess()` (replaces the deprecated `df_martian_chess()`)
+  - `icehouse_none()`
+  - `icehouse_pyramids()`
+
 piecenikr 0.1.4
 ===============
 
