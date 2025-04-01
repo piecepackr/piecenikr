@@ -15,4 +15,11 @@ df_martian_chess <- function(n_players = 2, seed = NULL) {
     icehouse_martian_chess(n_players = n_players, seed = seed)
 }
 
+#' @rdname piecenikr-deprecated
+#' @inheritParams looney_pyramid_game_system
+#' @export
+looney_pyramids <- function(..., border = TRUE) {
+    looney_pyramid_game_system(..., border = border)
+}
+
 # nocov end

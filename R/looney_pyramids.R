@@ -87,8 +87,8 @@ update_alpha <- function (colour, alpha = NA_real_) {
 
 #' Configuration objects for drawing Looney Pyramids
 #'
-#' \code{looney_pyramids} provides a basic configuration object
-#' for drawing Looney Pyramids.
+#' `looney_pyramid_game_system()` provides a basic configuration object
+#' for drawing Looney Pyramids, `icehouse_game_system()` is an alias.
 #'
 #' Looney Pyramids aka Icehouse pieces is a game system invented by Andrew Looney.
 #' See \url{https://www.looneylabs.com/looney-pyramids}.
@@ -98,7 +98,7 @@ update_alpha <- function (colour, alpha = NA_real_) {
 #' @param border If `TRUE` draw a black border line on piece edges.  Should normally be `TRUE` when
 #'               drawing with `{grid}` graphics and `FALSE` when drawing with 3D graphic systems.
 #' @export
-looney_pyramids <- function(..., border = TRUE) {
+looney_pyramid_game_system <- function(..., border = TRUE) {
     cb_suit_colors_pure <- c("#D55E00", "#000000", "#009E73", "#0072B2", "#F0E442", "#FFFFFF")
     cb_suit_colors_impure <- cb_suit_colors_pure
     cb_suit_colors_impure[2L] <- "grey30"
@@ -155,3 +155,7 @@ update_gp <- function(grob, gp = gpar()) {
     }
     grob
 }
+
+#' @rdname looney_pyramid_game_system
+#' @export
+icehouse_game_system <- looney_pyramid_game_system

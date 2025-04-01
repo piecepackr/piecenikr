@@ -3,14 +3,22 @@
 \name{piecenikr-deprecated}
 \alias{piecenikr-deprecated}
 \alias{df_martian_chess}
+\alias{looney_pyramids}
 \title{Deprecated functions}
 \usage{
 df_martian_chess(n_players = 2, seed = NULL)
+
+looney_pyramids(..., border = TRUE)
 }
 \arguments{
 \item{n_players}{Number of players}
 
 \item{seed}{Random seed}
+
+\item{...}{Should be empty.}
+
+\item{border}{If \code{TRUE} draw a black border line on piece edges.  Should normally be \code{TRUE} when
+drawing with \code{{grid}} graphics and \code{FALSE} when drawing with 3D graphic systems.}
 }
 \description{
 These functions are Deprecated in this release of piecenikr,
