@@ -27,7 +27,7 @@ Pyramids:
 -  https://www.icehousegames.org/wiki/index.php?title=Main_Page
    (unofficial wiki)
 
-This R package provides a ``looney_pyramids()`` configuration that make it
+This R package provides a ``looney_pyramid_game_system()`` configuration that make it
 easier to make Looney Pyramids graphics with piecepackr_.
 
 License
@@ -74,7 +74,7 @@ Within R_ do:
 Examples
 --------
 
-This package contains a ``looney_pyramids()`` configuration for use with `{piecepackr}`. By default it includes a black border for use with ``{grid}`` graphics.
+This package contains a ``looney_pyramid_game_system()`` configuration for use with `{piecepackr}`. By default it includes a black border for use with ``{grid}`` graphics.
 
 
 .. sourcecode:: r
@@ -84,7 +84,7 @@ This package contains a ``looney_pyramids()`` configuration for use with `{piece
     library("piecenikr")
     library("ppdf")
     library("tibble")
-    envir <- c(looney_pyramids(), game_systems())
+    envir <- c(looney_pyramid_game_system(), game_systems())
     
     dfb <- checker_board(side="back", nrows=3L, ncols=3L, suit = 2L, cell_width = 2)
     df1 <- icehouse_pyramids(side = "face",
@@ -119,7 +119,7 @@ This package contains a ``looney_pyramids()`` configuration for use with `{piece
 
     
 
-But you may want to use ``looney_pyramids(border = FALSE)`` when making graphics with the ``{rgl}``, ``{rayrender}``, or ``{rayvertex}`` packages:
+But you may want to use ``looney_pyramid_game_system(border = FALSE)`` when making graphics with the ``{rgl}``, ``{rayrender}``, or ``{rayvertex}`` packages:
 
 
 .. sourcecode:: r
@@ -130,7 +130,8 @@ But you may want to use ``looney_pyramids(border = FALSE)`` when making graphics
     library("ppdf")
     library("rgl")
     library("tibble")
-    envir <- c(looney_pyramids(border = FALSE), game_systems("sans3d"))
+    envir <- c(looney_pyramid_game_system(border = FALSE), 
+               game_systems(border = FALSE))
     
     dfb <- checker_board(nrows = 3L, ncols = 3L, suit = 6L, cell_width = 2) |> transform(x = 0, y = 0)
     dfp1 <- icehouse_pyramids(side = "top", x = 0, y = 0, rank = 3L, suit = 5L)
@@ -170,7 +171,7 @@ Here is an example of using ``icehouse_martian_chess()`` and the `PPN <https://t
     library("ppn")
     ppn_file <- system.file("ppn/martian-chess.ppn", package = "piecenikr")
     game <- read_ppn(ppn_file)[[1L]]
-    envir <- c(looney_pyramids(), game_systems())
+    envir <- c(looney_pyramid_game_system(), game_systems())
     animate_game(game, file = "man/figures/martian-chess.gif",
                  annotate = FALSE, envir = envir,
                  ppi = 50,

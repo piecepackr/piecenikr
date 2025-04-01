@@ -3,6 +3,7 @@
 \name{icehouse_pyramids}
 \alias{icehouse_pyramids}
 \alias{icehouse_none}
+\alias{icehouse_setup_by_name}
 \title{Generate icehouse pieces}
 \usage{
 icehouse_pyramids(
@@ -18,6 +19,12 @@ icehouse_pyramids(
 )
 
 icehouse_none()
+
+icehouse_setup_by_name(
+  name,
+  ...,
+  getter = function(x) get(x, envir = getNamespace("piecenikr"))
+)
 }
 \arguments{
 \item{...}{Should be left empty.}
@@ -27,20 +34,31 @@ icehouse_none()
 \item{piece_side}{If \code{"board_face"} a checkered board (as in American Checkers).
 If \code{"board_back"} a lined board (as in Turkish Checkers).}
 
-\item{suit}{Suit value (color) of board.  \code{2L} is "black" and \code{3L} is "green".}
+\item{suit}{Suit value (color) of board and pieces.
+\code{1L} is "red", \code{2L} is "black", \code{3L} is "green", \code{4L} is "blue", \code{5L} is "yellow", and \code{6L} is "white".
+Will be coerced by \code{\link[ppdf:piece_suit]{piece_suit()}}.}
 
 \item{rank}{Number of pips on the icehouse pyramid.}
 
 \item{x, y}{Cartesian coordinates (numeric vectors)}
 
-\item{angle}{Angle of board in degrees.
-Italian Checkers rotates its board 90 degrees compared to other checkers variants.}
+\item{angle}{Rotation of bit/board (numeric vector of degrees, counter-clockwise).
+Will be coerced by \code{\link[ppdf:piece_angle]{piece_angle()}}.}
 
 \item{length.out}{The number of pieces.
 Not needed if all the arguments are the same length (or of length one)
 and this length is the same as the number of desired pieces.}
+
+\item{name}{Game name.  Will be normalized by \code{\link[ppdf:normalize_name]{normalize_name()}}.}
+
+\item{getter}{Function with a single function name argument to use.
+By default will just look for functions in this package but
+a developer may want to consider \code{\link[=dynGet]{dynGet()}} or a
+wrapper around \code{\link[=get]{get()}} with a custom \code{envir} argument.}
 }
 \description{
-\code{icehouse_pyramids()} generates a data frame of icehouse pyramids.
+\code{icehouse_pyramids()} generates a data frame of icehouse pyramids,
+\code{looney_pyramids()} is an alias.
 \code{icehouse_none()} generates a zero-row data frame.
+\code{icehouse_setup_by_name()} generates a data frame from a given icehouse game name.
 }

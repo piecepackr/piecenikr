@@ -2,7 +2,7 @@ Encoding: UTF-8
 Package: piecenikr
 Type: Package
 Title: Looney Pyramid Graphics
-Version: 0.2.0-1
+Version: 0.2.0-2
 Authors@R: c(person("Trevor L.", "Davis", role=c("aut", "cre"),
              email="trevor.l.davis@gmail.com",
              comment = c(ORCID = "0000-0001-6341-4639")))
@@ -16,14 +16,14 @@ Imports:
     grDevices,
     grid,
     piecepackr (>= 1.15.0-5),
-    ppdf (>= 0.2.0-10),
+    ppdf (>= 0.2.0-20),
     rlang,
     tibble,
     utils,
     withr
 Suggests:
     ppcli,
-    ppn,
+    ppn (>= 0.2.0-4),
     testthat,
     vdiffr
 Remotes: piecepackr/piecepackr, piecepackr/ppcli, piecepackr/ppdf, piecepackr/ppn

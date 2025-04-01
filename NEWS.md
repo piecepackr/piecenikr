@@ -5,18 +5,26 @@ Deprecated features
 -------------------
 
 * The function `df_martian_chess()` chess is deprecated in favor of `icehouse_martian_chess()`.
+* The function `looney_pyramids()` is deprecatd in favor of `looney_pyramid_game_system()`.
 
 New features
 ------------
 
-* `looney_pyramids()` gains a `border` argument to enable/disable a black border,
+* New `looney_pyramid_game_sytem()` (replaces deprecated `looney_pyramids()`)
+  gains a `border` argument to enable/disable a black border,
   the colors have been tweaked (e.g. a lighter "yellow" and a darker "blue"),
   and now the `has_pyramids` binding returns `TRUE`.
+  `icehouse_game_system()` is a new alias for `looney_pyramid_game_system()`.
 * New icehouse piece setup functions:
 
   - `icehouse_martian_chess()` (replaces the deprecated `df_martian_chess()`)
   - `icehouse_none()`
   - `icehouse_pyramids()`
+  - `icehouse_setup_by_name()`
+
+* New PPN parser function that can be used with `ppn::read_ppn()`:
+
+  - `icehouse_parser()` with a `looney_pyramid_parser()` alias.
 
 piecenikr 0.1.4
 ===============
