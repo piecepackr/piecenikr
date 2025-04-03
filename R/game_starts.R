@@ -1,21 +1,46 @@
 #' Data frames of starting diagrams for various games
 #'
-#' \code{tibble} data frames of starting diagrams for various games.
+#' \code{tibble} data frames of setups for `r nrow(icehouse_games())` games playable with the Looney Pyramids game system.
+#'   Data frame output can usually be plotted with \code{pmap_piece(df, default.units = "in")}.
 #'
-#' Here is some more information about the various games:
-#'  \describe{
-#'  \item{Martian Chess}{An abstract by Andrew Looney.
-#'                      See \url{https://www.looneylabs.com/rules/martian-chess}.}
-#'}
+#' Here are links for more information about the various other games:
+#'
+#' `r man_markdown_table(icehouse_games())`
+#'
 #' @param n_players Number of players
 #' @param seed Random seed
+#' @return `r return_df()`
 #' @name icehouse_setups
 #' @rdname icehouse_setups
 NULL
 
-#' @importFrom tibble tibble
+#' @importFrom tibble tibble tribble
 #' @importFrom dplyr %>% bind_rows mutate
 #' @importFrom rlang .data
+NULL
+
+#' Data frames with game info
+#'
+#' `icehouse_games()` contain information about the games
+#' whose setups are provided by this package.
+#'
+#' @examples
+#' head(icehouse_games())
+#' nrow(icehouse_games())
+#' @return A [tibble::tibble()] data frame with character columns "game", "methods", "comment", and "url"
+#'         for game name, setup function name(s), possible comment, and url for more information.
+#' @export
+icehouse_games <- function() {
+    tribble(~game
+            , ~methods
+            , ~comment
+            , ~url
+            , "Martian Chess"
+            , "``icehouse_martian_chess()``"
+            , NA_character_
+            , "https://www.looneylabs.com/rules/martian-chess"
+    )
+}
 
 scale_xy <- function(df, factor) {
     df <- mutate(df, x = factor * .data$x, y = factor * .data$y)

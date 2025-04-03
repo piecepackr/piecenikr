@@ -26,6 +26,9 @@ New features
 
   - `icehouse_parser()` with a `looney_pyramid_parser()` alias.
 
+* `icehouse_games()` returns a data frame with info about the game
+  setups provided by this package.
+
 piecenikr 0.1.4
 ===============
 
