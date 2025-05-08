@@ -1,5 +1,5 @@
-piecenikr 0.2.0 (development)
-=============================
+piecenikr 0.2.1
+===============
 
 Deprecated features
 -------------------
