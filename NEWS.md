@@ -13,6 +13,7 @@ New features
 * New `looney_pyramid_game_sytem()` (replaces deprecated `looney_pyramids()`)
   gains a `border` argument to enable/disable a black border,
   the colors have been tweaked (e.g. a lighter "yellow" and a darker "blue"),
+  adds three new colors ("cyan", "magenta", and "orange"),
   and now the `has_pyramids` binding returns `TRUE`.
   `icehouse_game_system()` is a new alias for `looney_pyramid_game_system()`.
 * New icehouse piece setup functions:

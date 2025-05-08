@@ -99,18 +99,14 @@ update_alpha <- function (colour, alpha = NA_real_) {
 #'               drawing with `{grid}` graphics and `FALSE` when drawing with 3D graphic systems.
 #' @export
 looney_pyramid_game_system <- function(..., border = TRUE) {
-    cb_suit_colors_pure <- c("#D55E00", "#000000", "#009E73", "#0072B2", "#F0E442", "#FFFFFF")
+    cb_suit_colors_pure <- c("#D55E00", "#000000", "#009E73", "#0072B2", "#F0E442", "#FFFFFF", "#56B4E9", "#CC79A7", "#E69F00")
     cb_suit_colors_impure <- cb_suit_colors_pure
     cb_suit_colors_impure[2L] <- "grey30"
-    # suit_color = "#B53E00,#808080,#007E53,#3694C9,#C67F00,#808080"
-    # background_color.pyramid = "#D55E0090,#000000,#009E7390,#56B4E890,#E69F0090,#FFFFFF"
-    # border_color.pyramid = "#D55E00A0,#808080FF,#009E73A0,#56B4E9A0,#E69F00A0,#808080FF"
     suit_color <- cheap_darken(cb_suit_colors_impure, 0.4)
     suit_color[2L] <- "black"
-    # suit_color[5:6] <- cheap_darken(cb_suit_colors_impure[5:6], 0.36)
     suit_color <- update_alpha(suit_color, 1)
     background_color <- cb_suit_colors_impure
-    background_color[c(1, 3:5)] <- update_alpha(cb_suit_colors_impure[c(1, 3:5)], 0.80)
+    background_color[c(1, 3:5, 7:9)] <- update_alpha(cb_suit_colors_impure[c(1, 3:5, 7:9)], 0.80)
     if (border) {
         colors <- list(suit_color = suit_color,
                        background_color.pyramid = background_color,
@@ -123,7 +119,7 @@ looney_pyramid_game_system <- function(..., border = TRUE) {
                        border_lex = 0)
     }
     rank_text <- "\u25cf,\u25cf\u25cf,\u25cf\u25cf\u25cf"
-    pyramids <- list(n_ranks = 3, n_suits = 6,
+    pyramids <- list(n_ranks = 3, n_suits = 9,
                      width.r1.pyramid = 0.5625, width.r2.pyramid = 0.78125, width.r3.pyramid = 1,
                      height.r1.pyramid = 1.03879813366216633419, height.r2.pyramid = 1.429409979895551074947,
                      height.r3.pyramid = 1.820027472320129513506,
